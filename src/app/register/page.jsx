@@ -60,7 +60,7 @@ const Register = () => {
                     <input type="password" placeholder='Password...' onChange={(e) => setPassword(e.target.value)} />
                     <button className={classes.submitButton}>Register</button>
                     <button className={classes.registerNow} onClick={() => signIn()}>
-                        Don&apos;t have an account? <br /> Register now.
+                        Have an account? <br />Log In.
                     </button>
                 </form>
             </div>

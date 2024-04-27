@@ -48,7 +48,7 @@ const CreateBlog = () => {
         try {
             const imageUrl = await uploadImage()
 
-            const res = await fetch(`${process.env.LIVE_APP_URL}/api/blog`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_LIVE_APP_URL}/api/blog`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${session?.user?.accessToken}`

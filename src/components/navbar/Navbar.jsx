@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const loggedIn = false
 
+  
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -29,6 +30,7 @@ const Navbar = () => {
               ? (
                 <div>
                   <Image onClick={handleShowDropdown} src={person} width='45' height='45' alt='person'/>
+                  
                   {showDropdown && (
                     <div className={classes.dropdown}>
                       <AiOutlineClose className={classes.closeIcon} onClick={handleHideDropdown} />

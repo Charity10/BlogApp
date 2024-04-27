@@ -1,60 +1,79 @@
-'use client'
+// 'use client'
 
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import classes from './login.module.css'
-import { signIn } from 'next-auth/react'
+// import Link from 'next/link'
+// import { useRouter } from 'next/navigation'
+// import React, { useState } from 'react'
+// import { ToastContainer, toast } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
+// import classes from './login.module.css'
+// import { useSession, signIn,  signOut } from 'next-auth/react'
 
-const Login = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const router = useRouter()
+// const Login = () => {
+//     // const { data: session} = useSession();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+//     // if (session) {
+//     //     return (
+//     //         <div>
+//     //             <div>Welcome, {session.user.name}</div>
+//     //             <img src={session.user.image} alt={session.user.name} style={{borderRadius: '50px'}} />
+//     //             <button onClick={() => signOut()}>Sign out</button>
+//     //         </div>
+//     //     )
+        
+//     // } else {
+//     //     return (
+//     //         <div>
+//     //             <p>You are not signed in.</p>
+//     //             <button onClick={() => signIn()}>Sign in</button>
+//     //         </div>
+//     //     )
+//     // }
+//     // const [email, setEmail] = useState("")
+//     const [password, setPassword] = useState("")
+//     const router = useRouter()
 
-        if (password === '' || email === '') {
-            toast.error("Fill all fields!")
-            return
-        }
+//     const handleSubmit = async (e) => {
+//         e.preventDefault()
 
-        if (password.length < 6) {
-            toast.error("Password must be at least 6 characters long")
-            return
-        }
+//         if (password === '' || email === '') {
+//             toast.error("Fill all fields!")
+//             return
+//         }
 
-        try {
-            const res = await signIn('credentials', { email, password, redirect: false })
+//         if (password.length < 6) {
+//             toast.error("Password must be at least 6 characters long")
+//             return
+//         }
 
-            if (res?.error == null) {
-                router.push("/")
-            } else {
-                toast.error("Error occured while logging")
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+//         try {
+//             const res = await signIn('credentials', { email, password, redirect: false })
 
-    return (
-        <div className={classes.container}>
-            <div className={classes.wrapper}>
-                <h2>Log In</h2>
-                <form onSubmit={handleSubmit}>
-                    <input type="email" placeholder='Email...' onChange={(e) => setEmail(e.target.value)} />
-                    <input type="password" placeholder='Password...' onChange={(e) => setPassword(e.target.value)} />
-                    <button className={classes.submitButton}>Log in</button>
-                    <Link className={classes.loginNow} href='/register'>
-                        Don&apos;t have an account? <br /> Register now.
-                    </Link>
-                </form>
-            </div>
-            <ToastContainer />
-        </div>
-    )
-}
+//             if (res?.error == null) {
+//                 router.push("/")
+//             } else {
+//                 toast.error("Error occured while logging")
+//             }
+//         } catch (error) {
+//             console.log(error)
+//         }
+//     }
 
-export default Login
+//     return (
+//         <div className={classes.container}>
+//             <div className={classes.wrapper}>
+//                 <h2>Log In</h2>
+//                 <form onSubmit={handleSubmit}>
+//                     <input type="email" placeholder='Email...' onChange={(e) => setEmail(e.target.value)} />
+//                     <input type="password" placeholder='Password...' onChange={(e) => setPassword(e.target.value)} />
+//                     <button className={classes.submitButton}>Log in</button>
+//                     <Link className={classes.loginNow} href='/register'>
+//                         Don&apos;t have an account? <br /> Register now.
+//                     </Link>
+//                 </form>
+//             </div>
+//             <ToastContainer />
+//         </div>
+//     )
+// }
+
+// export default Login

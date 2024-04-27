@@ -44,6 +44,7 @@ const BlogDetails = (ctx) => {
             setIsLiked(blog?.likes?.includes(session?.user?._id))
             setBlogLikes(blog?.likes?.length || 0)
         }
+        console.log(session)
         session && fetchBlog()
     }, [session])
 
@@ -129,7 +130,7 @@ const BlogDetails = (ctx) => {
     return (
         <div className={classes.container}>
             <div className={classes.wrapper}>
-                <Image src={blogDetails?.imageUrl} width='750' height='650' />
+                <Image src={blogDetails?.imageUrl} width='750' height='650' alt='blog image'/>
                 <div className={classes.row}>
                     <h3 className={classes.title}>{blogDetails?.title}</h3>
                     {
