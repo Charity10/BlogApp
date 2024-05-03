@@ -15,19 +15,14 @@ const Navbar = () => {
 
   const handleHideDropdown = () => setShowDropdown(prev => false)
 
-  const loggedIn = false
-
-  
+  if (session && session.user) {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <h2 className={classes.left}>
-          <Link href="/">Mercy</Link>
+          <Link href="/">{session.user.name}</Link>
         </h2>
         <ul className={classes.right}>
-          {
-            session?.user
-              ? (
                 <div>
                   <Image onClick={handleShowDropdown} src={person} width='45' height='45' alt='person'/>
                   
@@ -39,18 +34,18 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-              )
-              : (
+                </ul>
+                </div>
+                </div>
+              ); 
+              } 
+              return (
                 <>
                   <button onClick={() => {signIn()}} className={classes.login}>Log in</button>
                   <Link href='/register'>Register</Link>
                 </>
               )
-          }
-        </ul>
-      </div>
-    </div>
-  )
+          
 }
 
 export default Navbar

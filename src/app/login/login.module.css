@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 12px;
 }
 
 .wrapper > h2{
@@ -70,4 +71,30 @@
 
 .loginNow:hover{
   color: #555;
+}
+
+.google{
+  background-color: #2561d8;
+  color: #fdfcfa;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 150ms;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+}
+
+.spotify{
+  background-color: #1db954;
+  color: #fdfcfa;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 150ms;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
 }

@@ -22,7 +22,9 @@ const BlogDetails = (ctx) => {
     const [comments, setComments] = useState([])
 
     const { data: session } = useSession()
+    console.log("current session:", session)
     const router = useRouter()
+    // console.log("current session:", session)
 
     useEffect(() => {
       async function fetchComments(){
@@ -134,7 +136,10 @@ const BlogDetails = (ctx) => {
                 <div className={classes.row}>
                     <h3 className={classes.title}>{blogDetails?.title}</h3>
                     {
+                        
                         blogDetails?.authorId?._id.toString() === session?.user?._id.toString()
+                        // (blogDetails?.authorId?._id || "").toString() === (session?.user?._id || "").toString()
+
                             ? (
                                 <div className={classes.controls}>
                                     <Link className={classes.editButton} href={`/blog/edit/${ctx.params.id}`}>
